@@ -25,6 +25,7 @@ public class TransferService {
     public Transfer saveOrUpdateTransfer(TransferDto transferDto) {
         Optional<Company> companyOp = companyRepository.findById(transferDto.getCompanyId());
         Transfer transfer = new ModelMapper().map(transferDto, Transfer.class);
+        transfer.setId(null);
         transfer.setCompany(companyOp.get());
         return transferRepository.save(transfer);
     }

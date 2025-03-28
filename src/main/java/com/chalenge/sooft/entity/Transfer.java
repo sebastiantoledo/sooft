@@ -37,6 +37,7 @@ public class Transfer {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "transfer_date", nullable = false)
+    @Builder.Default
     private LocalDate transferDate = LocalDate.now();
 
 }
